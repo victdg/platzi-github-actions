@@ -1,1 +1,1 @@
-console.log(`Hola mundo desde pipeline`)
+console.log(`Hola mundo desde pipeline v2`);
