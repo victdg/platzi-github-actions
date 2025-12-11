@@ -10,6 +10,7 @@ jobs: #Definición de los jobs
       - name: Hola mundo #Segundo step de nombre Hola mundo
         run: echo ¡Hola Mundo desde ${{ steps.ip.outputs.ipv4 }}! #bash
       - uses: actions/checkout@v3
+      - run: npm install
       - uses: actions/setup-node@v3
         with:
           node-version: 18
