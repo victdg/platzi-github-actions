@@ -20,6 +20,9 @@ jobs: #Definición de los jobs
       - name: print env
         run: echo "${{env}}"
 
+      - name: print github
+        run: echo "${{github}}"
+
       - name: Checkout repository
         uses: actions/checkout@v3
 
