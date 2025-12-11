@@ -1,7 +1,7 @@
 name: hola-mundo #Nombre del workflow
 on: [push, pull_request, issues, issue_comment, workflow_dispatch, schedule] #evento que lo activará
 jobs: #Definición de los jobs
-  hola-mundo: #Nombre del job
+  triggers: #Nombre del job
     env:
       VAR_1: ${{vars.VAR_1}}
       VAR_2: "Mi variable 2, estática"
