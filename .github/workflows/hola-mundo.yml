@@ -15,7 +15,9 @@ jobs: #Definición de los jobs
         run: echo ¡Hola Mundo desde ${{ steps.ip.outputs.ipv4 }}! #bash
 
       - run: echo $VAR_1
-      - run: echo "${{vars}}"
+
+      - name: print env
+        run: echo "${{env}}"
 
       - name: Checkout repository
         uses: actions/checkout@v3
