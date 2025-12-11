@@ -4,6 +4,7 @@ jobs: #Definición de los jobs
   hola-mundo: #Nombre del job
     env:
       VAR_1: ${{vars.VAR_1}}
+      VAR_2: "Mi variable 2, estática"
     runs-on: ubuntu-latest #Maquina en la que correrá
     steps: #Lista de steps del job hola-mundo
       - name: Public IP #Nombre del step
