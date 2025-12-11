@@ -2,6 +2,8 @@ name: hola-mundo #Nombre del workflow
 on: [push] #evento que lo activará
 jobs: #Definición de los jobs
   hola-mundo: #Nombre del job
+    env:
+      VAR_1: ${{env.VAR_1}}
     runs-on: ubuntu-latest #Maquina en la que correrá
     steps: #Lista de steps del job hola-mundo
       - name: Public IP #Nombre del step
@@ -13,6 +15,7 @@ jobs: #Definición de los jobs
         run: echo ¡Hola Mundo desde ${{ steps.ip.outputs.ipv4 }}! #bash
 
       - run: echo $VAR_1
+      - run: echo "${{env}}"
 
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -30,7 +33,7 @@ jobs: #Definición de los jobs
           cache: "pnpm"
 
       - name: Install dependencies with pnpm
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
 
       - name: Run index
         run: node index.js
