@@ -1,5 +1,5 @@
 name: triggers #Nombre del workflow
-on: [push, pull_request, issues, issue_comment, workflow_dispatch, schedule] #evento que lo activará
+on: [push, issues, issue_comment, workflow_dispatch, schedule] #evento que lo activará
 jobs: #Definición de los jobs
   triggers: #Nombre del job
     env:
@@ -10,7 +10,8 @@ jobs: #Definición de los jobs
       - name: event name
         run: "echo ${{toJSON(github)}}"
 
-      - run: echo $VAR_1
+      - name: var1
+        run: echo $VAR_1
 
       - name: print env
         run: echo "${{env}}"
