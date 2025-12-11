@@ -12,6 +12,8 @@ jobs: #Definición de los jobs
       - name: Hola mundo #Segundo step de nombre Hola mundo
         run: echo ¡Hola Mundo desde ${{ steps.ip.outputs.ipv4 }}! #bash
 
+      - run: echo $VAR_1
+
       - name: Checkout repository
         uses: actions/checkout@v3
 
@@ -28,7 +30,7 @@ jobs: #Definición de los jobs
           cache: "pnpm"
 
       - name: Install dependencies with pnpm
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: Run index
         run: node index.js
