@@ -8,7 +8,7 @@ jobs: #Definición de los jobs
     runs-on: ubuntu-latest #Maquina en la que correrá
     steps: #Lista de steps del job hola-mundo
       - name: event name
-        run: "echo ${{toJSON(github.event.name)}}"
+        run: "echo ${{toJSON(github.event)}}"
 
       - run: echo $VAR_1
 
