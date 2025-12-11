@@ -1,4 +1,4 @@
-name: hola-mundo #Nombre del workflow
+name: triggers #Nombre del workflow
 on: [push, pull_request, issues, issue_comment, workflow_dispatch, schedule] #evento que lo activará
 jobs: #Definición de los jobs
   triggers: #Nombre del job
