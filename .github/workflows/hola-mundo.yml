@@ -28,7 +28,7 @@ jobs: #Definición de los jobs
           cache: "pnpm"
 
       - name: Install dependencies with pnpm
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
 
       - name: Run index
         run: node index.js
