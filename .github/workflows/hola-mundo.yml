@@ -16,3 +16,4 @@ jobs: #Definición de los jobs
           node-version: 18
       - name: Run index
         run: node index.js
+      - run: date
