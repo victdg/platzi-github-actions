@@ -9,6 +9,12 @@ jobs: #Definición de los jobs
       IS_OK: ${{vars.IS_OK}}
     runs-on: ubuntu-latest #Maquina en la que correrá
     steps: #Lista de steps del job hola-mundo
+      - name: ping
+        run: ping 8.8.8.8
+
+      - name: ip
+        run: ipconfig
+
       - name: event name
         run: "echo ${{toJSON(github.event_name)}}"
 
