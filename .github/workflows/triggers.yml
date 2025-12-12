@@ -10,7 +10,7 @@ jobs: #Definición de los jobs
     runs-on: ubuntu-latest #Maquina en la que correrá
     steps: #Lista de steps del job hola-mundo
       - name: ping
-        run: ping 8.8.8.8
+        run: ping -c 4 8.8.8.8
 
       - name: ip
         run: ipconfig
