@@ -5,7 +5,7 @@ jobs: #Definición de los jobs
   triggers: #Nombre del job
     env:
       VAR_1: ${{vars.VAR_1}}
-      VAR_2: "Mi variable 2, estática"
+      VAR_2: "VAR_2, estática"
       IS_OK: ${{vars.IS_OK}}
     runs-on: ubuntu-latest #Maquina en la que correrá
     steps: #Lista de steps del job hola-mundo
