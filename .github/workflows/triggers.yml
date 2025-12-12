@@ -12,8 +12,8 @@ jobs: #Definición de los jobs
       - name: Test Internet Connectivity
         run: curl -v google.com
 
-      - name: ip
-        run: ipconfig
+      - name: Show IP Configuration
+        run: ip addr
 
       - name: event name
         run: "echo ${{toJSON(github.event_name)}}"
