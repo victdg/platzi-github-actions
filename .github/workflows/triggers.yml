@@ -1,6 +1,6 @@
 name: triggersx #Nombre del workflow
 run-name: triggers workflow
-on: [workflow_dispatch, push] #evento que lo activará
+on: [workflow_dispatch, push, issues, issue_comment] #evento que lo activará
 jobs: #Definición de los jobs.
   triggersx: #Nombre del job
     env:
