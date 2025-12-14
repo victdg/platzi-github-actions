@@ -1,8 +1,8 @@
-name: triggers #Nombre del workflow
+name: triggersx #Nombre del workflow
 run-name: triggers workflow
 on: [workflow_dispatch, push] #evento que lo activará
 jobs: #Definición de los jobs.
-  triggers: #Nombre del job
+  triggersx: #Nombre del job
     env:
       VAR_1: ${{vars.VAR_1}}
       VAR_2: "VAR_2, estática"
