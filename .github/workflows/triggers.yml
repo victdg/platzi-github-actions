@@ -1,0 +1,50 @@
+name: triggersx #Nombre del workflow
+run-name: triggers workflow
+on: [workflow_dispatch, push, issues, issue_comment] #evento que lo activará
+jobs: #Definición de los jobs.
+  triggersx: #Nombre del job
+    env:
+      VAR_1: ${{vars.VAR_1}}
+      VAR_2: "VAR_2, estática"
+      IS_OK: ${{vars.IS_OK}}
+    runs-on: ubuntu-latest #Maquina en la que correrá
+    steps: #Lista de steps del job hola-mundo
+      - name: Test Internet Connectivity
+        run: curl -v google.com
+
+      - name: Show IP Configuration
+        run: ip addr
+
+      - name: event name
+        run: "echo ${{toJSON(github.event_name)}}"
+
+      - name: var1
+        run: echo $VAR_1
+
+      - name: print env
+        run: echo "${{env}}"
+
+      - name: "print github:"
+        run: echo "${{toJSON(github)}}"
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          run_install: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: "pnpm"
+
+      - name: Install dependencies with pnpm
+        run: pnpm install
+
+      - name: Run index
+        run: node index.js
+      - run: date
